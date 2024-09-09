@@ -1,0 +1,50 @@
+# Dependencias de Node.js
+/node_modules
+/.pnp
+.pnp.js
+
+# Archivos de compilación de Next.js
+/.next
+
+# Archivos de compilación de producción
+/out
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias del paquete
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Directorio de construcción
+/build
+
+# Editor de texto (Visual Studio Code, IntelliJ, etc.)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de configuración de Docker
+docker-compose.yml
+Dockerfile
+
+# Archivos de cobertura de pruebas
+coverage/
+
+# Archivos de configuración de sistemas operativos
+.DS_Store
+Thumbs.db
