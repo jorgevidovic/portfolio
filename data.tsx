@@ -122,21 +122,24 @@ export const dataPortfolio = [
     {
         id: 1,
         title: "Ediciones Clío",
-        image: "/image-1.jpg",
+        description:"",
+        image: "/edicionesclio.png",
         urlGithub: "#!",
         urlDemo: "#!",
     },
     {
         id: 2,
         title: "ADD2Q",
-        image: "/image-2.jpg",
+        description:"",
+        image: "/add2q.png",
         urlGithub: "#!",
         urlDemo: "#!",
     },
     {
         id: 3,
         title: "Galistore",
-        image: "/image-3.jpg",
+        description:"",
+        image: "/galistore.png",
         urlGithub: "#!",
         urlDemo: "#!",
     },
@@ -145,25 +148,25 @@ export const dataPortfolio = [
 export const dataTestimonials = [
     {
         id: 1,
-        name: "Dr. Reyber Parra",
+        name: "Dr. Reyber Parra - Cronista de Maracibo",
         description:
             "¡Increíble plataforma! Los testimonios aquí son genuinos y me han ayudado a tomar decisiones informadas. ¡Altamente recomendado!",
     },
     {
         id: 2,
-        name: "Nestor Osechas",
+        name: "Nestor Osechas - Director de Galistore",
         description:
             "Me encanta la variedad de testimonios disponibles en esta página. Es inspirador ver cómo otras personas han superado desafíos similares a los míos. ¡Gracias por esta invaluable fuente de motivación!",
     },
     {
         id: 3,
-        name: "Brais Rodriguez",
+        name: "Brais Rodriguez - Cofundador del Mesón Delfín",
         description:
             "Excelente recurso para obtener opiniones auténticas sobre diferentes productos y servicios. Me ha ayudado mucho en mis compras en línea. ¡Bravo por este sitio!",
     },
     {
         id: 4,
-        name: "Dr. Jorge Villasmil",
+        name: "Dr. Jorge Villasmil - Director de Multiverso Journal",
         description:
             "¡Qué descubrimiento tan fantástico! Los testimonios aquí son honestos y detallados. Me siento más seguro al tomar decisiones después de leer las experiencias compartidas por otros usuarios.",
     },
