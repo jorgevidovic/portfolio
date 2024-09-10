@@ -150,24 +150,24 @@ export const dataTestimonials = [
         id: 1,
         name: "Dr. Reyber Parra - Cronista de Maracibo",
         description:
-            "¡Increíble plataforma! Los testimonios aquí son genuinos y me han ayudado a tomar decisiones informadas. ¡Altamente recomendado!",
+            "El trabajo de Jorge me ha ayudado a hacer de nuestros proyectos tecnológicos mas escalables y sostenibles ¡Altamente recomendado!",
     },
     {
         id: 2,
         name: "Nestor Osechas - Director de Galistore",
         description:
-            "Me encanta la variedad de testimonios disponibles en esta página. Es inspirador ver cómo otras personas han superado desafíos similares a los míos. ¡Gracias por esta invaluable fuente de motivación!",
+            "El trabajo de Jorge con Galistore nos ha permitido sistematizar y gestionar nuestras ventas, optimizando la productividad de nuestro equipo de trabajo.",
     },
     {
         id: 3,
         name: "Brais Rodriguez - Cofundador del Mesón Delfín",
         description:
-            "Excelente recurso para obtener opiniones auténticas sobre diferentes productos y servicios. Me ha ayudado mucho en mis compras en línea. ¡Bravo por este sitio!",
+            "Jorge ha sido un gran aliado en el desarrollo de nuestra plataforma de ventas, su trabajo ha sido clave para el crecimiento de nuestro negocio.",
     },
     {
         id: 4,
         name: "Dr. Jorge Villasmil - Director de Multiverso Journal",
         description:
-            "¡Qué descubrimiento tan fantástico! Los testimonios aquí son honestos y detallados. Me siento más seguro al tomar decisiones después de leer las experiencias compartidas por otros usuarios.",
+            "El trabajo de Jorge ha sido clave para la digitalización de nuestra revista, su trabajo ha sido de gran calidad y profesionalismo.",
     },
 ];
