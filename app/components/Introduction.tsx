@@ -1,10 +1,17 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 import Link from 'next/link'
+import Modal from '../utils/Modal'
+import ContactForm from './Forms/ContactForm'
 
 const Introduction = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const handleOpenModal = () => setIsModalOpen(true);
+    const handleCloseModal = () => setIsModalOpen(false);
+
     return (
         <div className='z-20 w-full bg-darkBg/60'>
             <div className='z-20 grid items-center h-full p-6 py-20 md:py-0 md:grid-cols-2'>
@@ -33,6 +40,17 @@ const Introduction = () => {
                             className='px-3 py-2 transition-all border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl hover:shadow-white/50' >
                             Proyectos
                         </Link>
+
+                        <button
+                            onClick={handleOpenModal}
+                            className='px-3 py-2 transition-all bg-secondary border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl hover:shadow-white/50'>
+                            Contáctame
+                        </button>
+
+                        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+                            <h2 className="text-2xl font-bold mb-4 text-black">Formulario de Contacto</h2>
+                            <ContactForm />
+                        </Modal>
                     </div>
                 </div>
             </div>

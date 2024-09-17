@@ -1,10 +1,17 @@
+"use client"
 import CircleImage from '@/app/components/CircleImage'
 import Container from '@/app/components/Container'
+import ContactForm from '@/app/components/Forms/ContactForm'
 import SliderService from '@/app/components/SliderService'
 import TransitionPage from '@/app/components/TransitionPage'
-import React from 'react'
+import Modal from '@/app/utils/Modal'
+import React, { useState } from 'react'
 
 const ServicesPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <>
       <TransitionPage />
@@ -23,9 +30,14 @@ const ServicesPage = () => {
               mientras que en el Backend, me especializo en la arquitectura de sistemas,
               lógica de negocio, y la gestión eficiente de bases de datos, entre otras áreas clave.
             </p>
-            <button className='px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/65 mx-auto md:mx-0 block'>
+            <button className='px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/65 mx-auto md:mx-0 block' onClick={handleOpenModal}>
               Contacta conmigo
             </button>
+
+            <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+              <h2 className="text-2xl font-bold mb-4 text-black">Formulario de Contacto</h2>
+              <ContactForm />
+            </Modal>
           </div>
 
           <div>
