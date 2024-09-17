@@ -6,6 +6,7 @@ import "./globals.css";
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <GoogleAnalytics gaId="G-KYW49K5ML1" />
         <Navbar />
         <Header />
         {children}
