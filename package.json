@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "ts-node app/scripts/GenerateSitemap.ts"
+    "postbuild": "ts-node --esm app/scripts/GenerateSitemap.ts"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.11",
