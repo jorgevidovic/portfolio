@@ -1,6 +1,6 @@
-const fs = require('fs').promises;
-const path = require('path');
-const xml = require('xml');
+import { promises as fs } from 'fs';
+import path from 'path';
+import xml from 'xml';
 
 const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL;
 
