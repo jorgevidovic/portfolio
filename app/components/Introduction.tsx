@@ -15,7 +15,16 @@ const Introduction = () => {
     return (
         <div className='z-20 w-full bg-darkBg/60'>
             <div className='z-20 grid items-center h-full p-6 py-20 md:py-0 md:grid-cols-2'>
-                <Image src="/jorgevidovic.png" alt='Jorge Vidovic' height='1000' width='1000' priority />
+            <div className=' flex justify-center items-center m-5 p-7 rounded-xl'>  
+                    <Image 
+                        src="/jorgevidovic.png" 
+                        alt='Jorge Vidovic' 
+                        height='500' 
+                        width='500'               
+                        priority
+                        className='border-2 border-white rounded-xl bg-black bg-opacity-30'
+                    />
+                </div>
 
                 <div className='flex flex-col justify-center max-w-md'>
                     <h3 className='mb-5 text-2xl leading-tight text-center md:text-left md:text-4xl md:mb-10'>
