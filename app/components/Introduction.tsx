@@ -15,7 +15,7 @@ const Introduction = () => {
     return (
         <div className='z-20 w-full bg-darkBg/60'>
             <div className='z-20 grid items-center h-full p-6 py-20 md:py-0 md:grid-cols-2'>
-            <div className=' flex justify-center items-center m-5 p-7 rounded-xl'>  
+            <div className=' flex justify-center items-center m-7 p-7 rounded-xl'>  
                     <Image 
                         src="/jorgevidovic.png" 
                         alt='Jorge Vidovic' 
