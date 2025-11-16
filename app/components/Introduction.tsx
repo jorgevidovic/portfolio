@@ -16,10 +16,10 @@ const Introduction = () => {
       <div className="z-20 grid items-center h-full p-6 py-20 md:py-0 md:grid-cols-2">
         <div className=" flex justify-center items-center m-7 p-7 rounded-xl">
           <Image
-            src="/jorgevidovic.png"
+            src="/jorgevidovic.jpg"
             alt="Jorge Vidovic"
-            height="500"
-            width="500"
+            height="300"
+            width="300"
             priority
             className="border-2 border-white rounded-xl bg-black bg-opacity-30"
           />
