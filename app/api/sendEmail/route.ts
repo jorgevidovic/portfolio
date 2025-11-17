@@ -25,7 +25,14 @@ function isValidEmail(email: string): boolean {
 }
 
 // Validate input data
-function validateFormData(data: any): { valid: boolean; errors: string[] } {
+interface EmailFormData {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+}
+
+function validateFormData(data: EmailFormData): { valid: boolean; errors: string[] } {
   const errors: string[] = [];
 
   if (!data.name || typeof data.name !== 'string' || data.name.trim().length === 0) {
@@ -117,7 +124,7 @@ export async function POST(req: NextRequest) {
     const safeSubject = escapeHtml(subject.trim());
     const safeMessage = escapeHtml(message.trim()).replace(/\n/g, '<br>');
 
-    const data = await resend.emails.send({
+    await resend.emails.send({
       from: '"Mail de JorgeVidovic.com"<mailhandler@jorgevidovic.com>',
       to: 'jorgevidovic@vidovic.systems',
       subject: `Nuevo mensaje de contacto de jorgevidovic.com: ${safeSubject}`,

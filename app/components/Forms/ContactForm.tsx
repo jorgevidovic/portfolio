@@ -22,7 +22,6 @@ const ContactForm: React.FC = () => {
         message: '',
     });
 
-    const [submitted, setSubmitted] = useState(false);
     const [formStatus, setFormStatus] = useState<null | 'success' | 'error'>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string>('');
@@ -63,7 +62,6 @@ const ContactForm: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSubmitted(true);
         setErrorMessage('');
 
         if (validateForm()) {
@@ -79,8 +77,7 @@ const ContactForm: React.FC = () => {
 
                 if (response.ok) {
                     setFormStatus('success');
-                    setFormData({ name: '', email: '', subject: '', message: '' });
-                    setSubmitted(false); 
+                    setFormData({ name: '', email: '', subject: '', message: '' }); 
                 } else {
                     setFormStatus('error');
                     setErrorMessage(data.error || 'Error al enviar el formulario. Inténtalo nuevamente.');
