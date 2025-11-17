@@ -48,3 +48,7 @@ coverage/
 # Archivos de configuración de sistemas operativos
 .DS_Store
 Thumbs.db
+
+IMPROVEMENTS.md
+public/sitemap.xml
+public/robots.txt

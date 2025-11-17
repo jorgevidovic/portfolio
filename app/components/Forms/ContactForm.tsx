@@ -24,6 +24,8 @@ const ContactForm: React.FC = () => {
 
     const [submitted, setSubmitted] = useState(false);
     const [formStatus, setFormStatus] = useState<null | 'success' | 'error'>(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
     // Función para validar el formulario
     const validateForm = (): boolean => {
@@ -62,24 +64,38 @@ const ContactForm: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSubmitted(true);
+        setErrorMessage('');
 
         if (validateForm()) {
+            setIsLoading(true);
             try {
-                const response = await fetch('api/sendEmail', {
+                const response = await fetch('/api/sendEmail', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData), 
                 });
 
+                const data = await response.json();
+
                 if (response.ok) {
                     setFormStatus('success');
-                    setFormData({ name: '', email: '', subject: '', message: '' }); 
+                    setFormData({ name: '', email: '', subject: '', message: '' });
+                    setSubmitted(false); 
                 } else {
                     setFormStatus('error');
+                    setErrorMessage(data.error || 'Error al enviar el formulario. Inténtalo nuevamente.');
+                    
+                    // Show specific errors if available
+                    if (data.details && Array.isArray(data.details)) {
+                        setErrorMessage(data.details.join('. '));
+                    }
                 }
             } catch (error) {
                 console.error('Error al enviar el formulario:', error);
                 setFormStatus('error');
+                setErrorMessage('Error de conexión. Por favor, verifica tu conexión a internet.');
+            } finally {
+                setIsLoading(false);
             }
         } else {
             setFormStatus('error');
@@ -154,17 +170,34 @@ const ContactForm: React.FC = () => {
             {/* Botón para Enviar */}
             <button
                 type="submit"
-                className="bg-secondary text-white p-2 rounded-md hover:bg-secondary-dark transition-colors">
-                Enviar
+                disabled={isLoading}
+                className="bg-secondary text-white p-2 rounded-md hover:bg-orange-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                {isLoading ? (
+                    <>
+                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Enviando...
+                    </>
+                ) : (
+                    'Enviar'
+                )}
             </button>
 
             {/* Mensajes de estado */}
-            {submitted && formStatus === 'success' && (
-                <p className="text-green-500 text-sm mt-3">¡Formulario enviado con éxito!</p>
+            {formStatus === 'success' && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                    <strong className="font-bold">¡Éxito! </strong>
+                    <span className="block sm:inline">Tu mensaje ha sido enviado correctamente. Te responderé pronto.</span>
+                </div>
             )}
 
-            {submitted && formStatus === 'error' && (
-                <p className="text-red-500 text-sm mt-3">Error al enviar el formulario. Inténtalo nuevamente.</p>
+            {formStatus === 'error' && errorMessage && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong className="font-bold">Error: </strong>
+                    <span className="block sm:inline">{errorMessage}</span>
+                </div>
             )}
         </form>
     );

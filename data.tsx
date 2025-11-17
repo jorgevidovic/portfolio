@@ -18,26 +18,31 @@ export const socialNetworks = [
     id: 1,
     logo: <Youtube size={30} strokeWidth={1} />,
     src: "https://www.youtube.com/@JorgeVidovic",
+    name: "YouTube",
   },
   {
     id: 2,
     logo: <Linkedin size={30} strokeWidth={1} />,
     src: "https://www.linkedin.com/in/jorgevidovic/",
+    name: "LinkedIn",
   },
   {
     id: 3,
     logo: <Instagram size={30} strokeWidth={1} />,
     src: "https://www.instagram.com/jorgevidovic/",
+    name: "Instagram",
   },
   {
     id: 4,
     logo: <Github size={30} strokeWidth={1} />,
     src: "https://github.com/jorgevidovic",
+    name: "GitHub",
   },
   {
     id: 5,
     logo: <FaTiktok />,
     src: "https://www.tiktok.com/@jorgevidovic",
+    name: "TikTok",
   },
 ];
 
