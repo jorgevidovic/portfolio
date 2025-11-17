@@ -12,7 +12,7 @@ const TestimonialsPage = () => {
       <TransitionPage />
       <div className="flex flex-col justify-center h-lvh">
         <CircleImage />
-        <h1 className="text-2xl leading-tight text-center md:text-4xl md:mb-5 font-bold  md:text-5xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center font-bold mb-8 md:mb-12">
           Testimonios
         </h1>
         <div className="flex items-center justify-center">
@@ -33,10 +33,10 @@ const TestimonialsPage = () => {
             >
               {dataTestimonials.map(({ id, name, description }) => (
                 <SwiperSlide key={id}>
-                  <h4 className="text-center font-bold text-secondary">
+                  <h4 className="text-lg sm:text-xl md:text-2xl text-center font-bold text-secondary mb-3">
                     {name}
                   </h4>
-                  <div className="mt-5 text-center">{description}</div>
+                  <div className="mt-5 text-base sm:text-lg text-center leading-relaxed px-4">{description}</div>
                 </SwiperSlide>
               ))}
             </Swiper>

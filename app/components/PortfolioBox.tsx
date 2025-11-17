@@ -18,8 +18,8 @@ const PortfolioBox = (props: PortfolioBoxProps) => {
     const {title, image, urlGithub, urlDemo } = data
 
     return (
-        <div className='p-4 border border-tel-50 rounded-xl'>
-            <h3 className='mb-4 text-xl'>
+        <div className='p-4 border border-tel-50 rounded-xl hover:border-secondary transition-all duration-300'>
+            <h3 className='mb-4 text-lg sm:text-xl md:text-2xl font-semibold'>
                 {title}
             </h3>
             <Image src={image} alt={title} width={200} height={200} className='w-full md:w-[200px] rounded-2xl h-auto'/>
@@ -27,14 +27,14 @@ const PortfolioBox = (props: PortfolioBoxProps) => {
                 <Link
                     href={urlGithub}
                     target="_blank"
-                    className="p-2 transition duration-150 rounded-lg bg-slate-500 hover:bg-slate-500/80">
+                    className="p-2 sm:px-3 sm:py-2 text-sm sm:text-base transition duration-150 rounded-lg bg-slate-500 hover:bg-slate-500/80 font-medium">
                     Github
                 </Link>
 
                 <Link
                     href={urlDemo}
                     target="_blank"
-                    className="p-2 transition duration-150 rounded-lg bg-secondary hover:bg-secondary/80">
+                    className="p-2 sm:px-3 sm:py-2 text-sm sm:text-base transition duration-150 rounded-lg bg-secondary hover:bg-secondary/80 font-medium">
                     Demo
                 </Link>
             </div>

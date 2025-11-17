@@ -9,7 +9,7 @@ const AboutPage = () => {
         <>
             <TransitionPage />
             <Container>
-                <h1 className='text-2xl leading-tight text-center md:text-left md:text-5xl md:mt-10 font-bold md:px-20'>
+                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center md:text-left md:mt-10 font-bold md:px-20 mb-8'>
                     Experiencia
                 </h1>
                 <CounterService />

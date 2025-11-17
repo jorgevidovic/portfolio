@@ -15,8 +15,8 @@ const CounterService = () => {
               ${lineRight && 'px-4 border-2 border-transparent md:border-e-gray-100'}
               ${lineRightMobile && 'border-e-gray-100'}
           `}>
-            <p className='flex mb-2 text-2xl font-extrabold md:text-4xl text-secondary'><CountUp end={endCounter} start={0} duration={5} /></p>
-            <p className='text-xs uppercase max-w-[100px]'>{text}</p>
+            <p className='flex mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-secondary'><CountUp end={endCounter} start={0} duration={5} /></p>
+            <p className='text-xs sm:text-sm md:text-base uppercase max-w-[100px] leading-tight'>{text}</p>
           </div>
         </div>
       ))}

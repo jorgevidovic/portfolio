@@ -9,8 +9,8 @@ const ProjectsPage = () => {
   return (
     <Container>
       <TransitionPage />
-      <div className="flex flex-col justify-center h-full mb-8">
-        <h1 className="text-2xl leading-tight text-center md:text-left md:text-5xl md:mt-10 font-bold md:px-20">
+      <div className="flex flex-col justify-center h-full mb-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center md:text-left md:mt-10 font-bold md:px-20">
           Proyectos
         </h1>
       </div>

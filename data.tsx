@@ -10,6 +10,7 @@ import {
   Speech,
   Github,
   Instagram,
+  Database,
 } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 
@@ -135,6 +136,12 @@ export const serviceData = [
     description:
       "Diseño y desarrollo de backends y API's, adaptadas a tus necesidades",
   },
+  {
+    icon: <Database />,
+    title: "Gestión de bases de datos",
+    description:
+      "Gestión, diseño, desarrollo y optimización de bases de datos.",
+  }
 ];
 
 export const dataPortfolio = [
