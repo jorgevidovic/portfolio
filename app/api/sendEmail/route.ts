@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Rate limiting map (in production, use Redis or a proper rate limiting service)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
@@ -124,6 +122,7 @@ export async function POST(req: NextRequest) {
     const safeSubject = escapeHtml(subject.trim());
     const safeMessage = escapeHtml(message.trim()).replace(/\n/g, '<br>');
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: '"Mail de JorgeVidovic.com"<mailhandler@jorgevidovic.com>',
       to: 'jorgevidovic@vidovic.systems',
