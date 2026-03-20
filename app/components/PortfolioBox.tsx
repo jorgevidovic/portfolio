@@ -42,27 +42,33 @@ const PortfolioBox = ({ data }: PortfolioBoxProps) => {
       {/* Card */}
       <button
         onClick={() => setOpen(true)}
-        className="group relative flex flex-col p-5 rounded-xl bg-surface border border-white/8 hover:border-secondary/40 transition-all duration-300 text-left w-full overflow-hidden"
+        className="group relative flex flex-col p-5 rounded-xl bg-surface border border-white/8 hover:border-secondary/40 transition-all duration-300 text-left w-full overflow-hidden h-full min-h-[300px]"
       >
         {/* Top accent */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-secondary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        <div className="mb-4 flex items-center justify-center rounded-lg bg-white/5 h-[120px] overflow-hidden">
+        {/* Image — fixed height so all cards align */}
+        <div className="mb-4 flex items-center justify-center rounded-lg bg-white/5 h-[110px] shrink-0 overflow-hidden">
           <Image
             src={data.image}
             alt={content.title}
             width={160}
             height={100}
-            className="max-h-[90px] w-auto object-contain"
+            className="max-h-[82px] w-auto object-contain"
           />
         </div>
 
-        <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-secondary transition-colors duration-200">
+        <h3 className="text-base font-bold text-white group-hover:text-secondary transition-colors duration-200 mb-2">
           {content.title}
         </h3>
 
+        {/* Description snippet */}
+        <p className="text-xs text-white/45 leading-relaxed line-clamp-3 flex-1">
+          {content.description}
+        </p>
+
         {data.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mt-2">
+          <div className="flex flex-wrap gap-1.5 mt-3">
             {data.tags.slice(0, 2).map((tag) => (
               <span
                 key={tag}
