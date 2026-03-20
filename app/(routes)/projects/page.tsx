@@ -1,17 +1,22 @@
+"use client";
+
 import CircleImage from "@/app/components/CircleImage";
 import Container from "@/app/components/Container";
 import PortfolioBox from "@/app/components/PortfolioBox";
 import TransitionPage from "@/app/components/TransitionPage";
+import { useLang } from "@/app/lib/LangContext";
 import { dataPortfolio } from "@/data";
 import React from "react";
 
 const ProjectsPage = () => {
+  const { tr } = useLang();
+
   return (
     <Container>
       <TransitionPage />
       <div className="flex flex-col justify-center h-full mb-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center md:text-left md:mt-10 font-bold md:px-20">
-          Proyectos
+          {tr("projects_title")}
         </h1>
       </div>
 

@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jorge Vidovic — Portfolio
 
-## Getting Started
+Portfolio personal de **Jorge Vidovic**, desarrollador Full Stack y CEO de [Vidovic Systems](https://vidovic.systems). Construido con Next.js 14, presenta proyectos reales, experiencia profesional y testimonios de clientes, con soporte completo de **tres idiomas** (Español, English, Français).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Características
+
+- **Multi-idioma** — ES / EN / FR mediante un store global reactivo (sin next-intl ni middleware); selector de idioma con banderas en el header.
+- **Tema oscuro** — Paleta oscura con acento naranja (`#f5741c`), tipografía Geist y animaciones suaves.
+- **Partículas interactivas** — Hero animado con tsParticles (optimizado para móvil: 30 partículas vs 80 en escritorio).
+- **Animaciones de página** — Transiciones entre rutas con Framer Motion.
+- **Carrusel de servicios** — Swiper con paginación; muestra Desarrollo de Software, Marketing Digital y Diseño & Branding.
+- **Portfolio de proyectos** — 5 proyectos reales (Mesón Delfín, Delfín Delivery, Ediciones Clío, ADD2Q, Galistore) con imágenes, descripción y enlace a demo.
+- **Testimonios** — Carrusel de 4 testimonios de clientes reales, traducidos a los 3 idiomas.
+- **Formulario de contacto** — Modal con validación cliente/servidor, protección XSS, rate limiting y envío vía Resend.
+- **SEO completo** — Metadatos Open Graph, Twitter Card, sitemap dinámico y robots.txt.
+- **Seguridad** — Headers HTTP estrictos (HSTS, X-Frame-Options, CSP, etc.).
+
+---
+
+## Stack
+
+| Categoría         | Tecnología                                      |
+|-------------------|-------------------------------------------------|
+| Framework         | Next.js 14 (App Router, TypeScript)             |
+| Estilos           | Tailwind CSS v3                                 |
+| Animaciones       | Framer Motion, react-type-animation             |
+| Partículas        | @tsparticles/react + @tsparticles/slim          |
+| Carrusel          | Swiper 11                                       |
+| Contadores        | react-countup                                   |
+| Iconos            | Lucide React, React Icons                       |
+| Email             | Resend                                          |
+| Analytics         | Google Analytics (@next/third-parties)          |
+
+---
+
+## Estructura de rutas
+
+```
+/               → Home (hero + partículas + introducción)
+/about          → Experiencia (contadores animados + timeline)
+/services       → Servicios (slider Swiper)
+/projects       → Proyectos (grid con imágenes)
+/testimonials   → Testimonios (carrusel)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variables de entorno
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Crea un archivo `.env.local` en la raíz con:
 
-## Learn More
+```env
+RESEND_API_KEY=tu_clave_de_resend
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Instalación y desarrollo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install
+npm run dev
+```
 
-## Deploy on Vercel
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Despliegue
+
+El proyecto se despliega automáticamente en **Vercel** al hacer push a `main`. Asegúrate de configurar la variable `RESEND_API_KEY` en el panel de Vercel.
+
+---
+
+## Proyectos incluidos
+
+| Proyecto          | Tipo                                     | Demo                            |
+|-------------------|------------------------------------------|---------------------------------|
+| Mesón Delfín      | Web · Social Media · Paid Ads            | [mesondelfin.com](https://mesondelfin.com) |
+| Delfín Delivery   | Web · Social Media · Paid Ads            | [delfindelivery.com](https://delfindelivery.com) |
+| Ediciones Clío    | Web · Social · Paid Ads · Sysadmin       | [edicionesclio.com](https://edicionesclio.com) |
+| ADD2Q             | Desarrollo de Software                   | —                               |
+| Galistore         | Desarrollo de Software                   | —                               |
+
+---
+
+© Jorge Vidovic — [jorgevidovic.com](https://jorgevidovic.com)

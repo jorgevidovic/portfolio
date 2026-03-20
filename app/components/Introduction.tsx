@@ -5,11 +5,13 @@ import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
 import Modal from "../utils/Modal";
 import ContactForm from "./Forms/ContactForm";
+import { useLang } from "@/app/lib/LangContext";
 
 const Introduction = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
+  const { tr, lang } = useLang();
 
   return (
     <div className="z-20 w-full bg-darkBg/60 min-h-screen md:min-h-0">
@@ -31,10 +33,11 @@ const Introduction = () => {
 
         {/* Content Section */}
         <div className="flex flex-col justify-center order-2 md:order-2 max-w-full md:max-w-lg lg:max-w-xl mx-auto md:mx-0 flex-shrink-0">
-          {/* Title with TypeAnimation */}
+          {/* Title with TypeAnimation — re-mounts on lang change to restart animation */}
           <h1 className="mb-3 sm:mb-4 md:mb-6 lg:mb-8 text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight text-center md:text-left">
             <TypeAnimation
-              sequence={["Desarrollador de software", 1000]}
+              key={lang}
+              sequence={[tr("intro_typing1"), 1000]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
@@ -44,8 +47,7 @@ const Introduction = () => {
 
           {/* Description */}
           <p className="mx-auto md:mx-0 mb-4 sm:mb-6 md:mb-10 text-sm sm:text-base md:text-xl lg:text-2xl text-center md:text-left text-gray-200 leading-relaxed px-2 sm:px-0">
-            Desarrollo software a medida, abarcando todas las áreas del
-            proyecto.
+            {tr("intro_description")}
           </p>
 
           {/* Buttons */}
@@ -54,19 +56,19 @@ const Introduction = () => {
               href="/projects"
               className="w-full sm:w-auto px-5 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-2.5 md:py-3 transition-all border-2 border-white cursor-pointer text-sm sm:text-base md:text-lg font-medium text-center rounded-xl hover:shadow-xl hover:shadow-white/50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-darkBg"
             >
-              Proyectos
+              {tr("intro_cta_projects")}
             </Link>
 
             <button
               onClick={handleOpenModal}
               className="w-full sm:w-auto px-5 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-2.5 md:py-3 transition-all bg-secondary border-2 border-secondary cursor-pointer text-sm sm:text-base md:text-lg font-medium rounded-xl hover:shadow-xl hover:shadow-secondary/50 hover:scale-105 active:scale-95 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-darkBg"
             >
-              Contáctame
+              {tr("intro_cta_contact")}
             </button>
 
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black">
-                Formulario de Contacto
+                {tr("intro_form_title")}
               </h2>
               <ContactForm />
             </Modal>

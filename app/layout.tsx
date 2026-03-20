@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import { LangProvider } from "./lib/LangContext";
 import "./globals.css";
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -22,7 +23,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Jorge Vidovic | Desarrollador de Software",
   description: "Desarrollador de software especializado en desarrollo web full-stack. Desarrollo software a medida, abarcando todas las áreas del proyecto.",
-  keywords: ["desarrollador de software", "desarrollo web", "programador", "full-stack developer", "Jorge Vidovic"],
+  keywords: ["desarrollador de software", "desarrollo web", "programador", "full-stack developer", "Jorge Vidovic", "Vidovic Systems"],
   authors: [{ name: "Jorge Vidovic" }],
   creator: "Jorge Vidovic",
   publisher: "Jorge Vidovic",
@@ -72,12 +73,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <GoogleAnalytics gaId="G-KYW49K5ML1" />
-        <Navbar />
-        <Header />
-        {children}
+        <LangProvider>
+          <Navbar />
+          <Header />
+          {children}
+        </LangProvider>
       </body>
     </html>
   );
