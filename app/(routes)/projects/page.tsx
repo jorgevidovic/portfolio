@@ -1,6 +1,5 @@
 "use client";
 
-import CircleImage from "@/app/components/CircleImage";
 import Container from "@/app/components/Container";
 import PortfolioBox from "@/app/components/PortfolioBox";
 import TransitionPage from "@/app/components/TransitionPage";
@@ -14,19 +13,15 @@ const ProjectsPage = () => {
   return (
     <Container>
       <TransitionPage />
-      <div className="flex flex-col justify-center h-full mb-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center md:text-left md:mt-10 font-bold md:px-20">
-          {tr("projects_title")}
-        </h1>
-      </div>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center md:text-left md:mt-10 font-extrabold mb-10">
+        {tr("projects_title")}
+      </h1>
 
-      <div className="relative z-10 grid max-w-5xl gap-6 mx-auto mt-4 sm:grid-cols-2 md:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl">
         {dataPortfolio.map((data) => (
           <PortfolioBox key={data.id} data={data} />
         ))}
       </div>
-
-      <CircleImage />
     </Container>
   );
 };

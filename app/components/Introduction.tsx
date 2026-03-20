@@ -14,54 +14,66 @@ const Introduction = () => {
   const { tr, lang } = useLang();
 
   return (
-    <div className="z-20 w-full bg-darkBg/60 min-h-screen md:min-h-0">
-      <div className="z-20 flex flex-col md:grid md:items-center h-full md:h-full px-4 pt-48 pb-32 sm:pt-52 sm:pb-36 md:py-20 lg:py-0 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-7xl mx-auto">
-        {/* Image Section */}
-        <div className="flex justify-center items-center order-1 md:order-1 flex-shrink-0">
-          <div className="relative w-full max-w-[180px] sm:max-w-[220px] md:max-w-[280px] lg:max-w-[320px] xl:max-w-[350px]">
-            <Image
-              src="/jorgevidovic.jpg"
-              alt="Jorge Vidovic - Desarrollador de Software"
-              width={350}
-              height={350}
-              priority
-              sizes="(max-width: 640px) 180px, (max-width: 768px) 220px, (max-width: 1024px) 280px, (max-width: 1280px) 320px, 350px"
-              className="border-2 border-white rounded-xl bg-black bg-opacity-30 w-full h-auto shadow-lg hover:shadow-2xl transition-shadow duration-300"
-            />
+    <div className="z-20 w-full min-h-screen md:min-h-0">
+      <div className="z-20 flex flex-col md:grid md:items-center h-full px-4 pt-48 pb-32 sm:pt-52 sm:pb-36 md:py-20 lg:py-0 md:grid-cols-2 gap-10 md:gap-12 max-w-6xl mx-auto">
+
+        {/* Photo */}
+        <div className="flex justify-center items-center order-1 md:order-1">
+          <div className="relative">
+            {/* Outer glow ring */}
+            <div className="absolute inset-0 rounded-2xl bg-secondary/20 blur-2xl scale-105 pointer-events-none" />
+            {/* Border gradient wrapper */}
+            <div className="relative p-[2px] rounded-2xl bg-gradient-to-br from-secondary/60 via-secondary/20 to-transparent shadow-[0_0_40px_rgba(245,116,28,0.2)]">
+              <Image
+                src="/jorgevidovic.jpg"
+                alt="Jorge Vidovic - Desarrollador de Software"
+                width={340}
+                height={340}
+                priority
+                sizes="(max-width: 640px) 200px, (max-width: 768px) 240px, (max-width: 1024px) 300px, 340px"
+                className="rounded-2xl w-[200px] sm:w-[240px] md:w-[300px] lg:w-[340px] h-auto object-cover bg-surface"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Content Section */}
-        <div className="flex flex-col justify-center order-2 md:order-2 max-w-full md:max-w-lg lg:max-w-xl mx-auto md:mx-0 flex-shrink-0">
-          {/* Title with TypeAnimation — re-mounts on lang change to restart animation */}
-          <h1 className="mb-3 sm:mb-4 md:mb-6 lg:mb-8 text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight text-center md:text-left">
+        {/* Text */}
+        <div className="flex flex-col justify-center order-2 md:order-2 max-w-xl mx-auto md:mx-0">
+          {/* Badge */}
+          <span className="inline-flex items-center gap-2 self-center md:self-start mb-5 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/25 text-secondary text-xs font-semibold uppercase tracking-widest">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+            Full Stack Developer
+          </span>
+
+          {/* Animated title */}
+          <h1 className="mb-4 text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-center md:text-left">
             <TypeAnimation
               key={lang}
-              sequence={[tr("intro_typing1"), 1000]}
+              sequence={[tr("intro_typing1"), 1200]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="font-bold text-white"
+              className="text-white"
             />
           </h1>
 
           {/* Description */}
-          <p className="mx-auto md:mx-0 mb-4 sm:mb-6 md:mb-10 text-sm sm:text-base md:text-xl lg:text-2xl text-center md:text-left text-gray-200 leading-relaxed px-2 sm:px-0">
+          <p className="mb-8 text-base sm:text-lg md:text-lg lg:text-xl text-center md:text-left text-white/60 leading-relaxed">
             {tr("intro_description")}
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-full sm:w-auto px-2 sm:px-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-3 sm:gap-4 w-full sm:w-auto">
             <Link
               href="/projects"
-              className="w-full sm:w-auto px-5 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-2.5 md:py-3 transition-all border-2 border-white cursor-pointer text-sm sm:text-base md:text-lg font-medium text-center rounded-xl hover:shadow-xl hover:shadow-white/50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-darkBg"
+              className="flex-1 sm:flex-none px-7 py-3 text-sm sm:text-base font-semibold text-center rounded-xl border border-white/20 hover:border-white/50 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               {tr("intro_cta_projects")}
             </Link>
 
             <button
               onClick={handleOpenModal}
-              className="w-full sm:w-auto px-5 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-2.5 md:py-3 transition-all bg-secondary border-2 border-secondary cursor-pointer text-sm sm:text-base md:text-lg font-medium rounded-xl hover:shadow-xl hover:shadow-secondary/50 hover:scale-105 active:scale-95 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-darkBg"
+              className="flex-1 sm:flex-none px-7 py-3 text-sm sm:text-base font-semibold rounded-xl bg-secondary hover:bg-orange-500 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_24px_rgba(245,116,28,0.35)]"
             >
               {tr("intro_cta_contact")}
             </button>

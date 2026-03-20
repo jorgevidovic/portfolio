@@ -10,12 +10,13 @@ const config: Config = {
     extend: {
       colors: {
         secondary: "#f5741c",
-        darkBg: "#131424"
+        darkBg: "#06060e",
+        surface: "#0e0e1c",
       },
       backgroundImage: {
         "gradient-cover":
-          "linear-gradient(90.21deg, rgba(170,57,124,0.5) -5.91%, rgba(74,47,189,0.5) 111.58%)"
-      }
+          "radial-gradient(ellipse 90% 70% at 65% 40%, rgba(74,47,189,0.22) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 5% 90%, rgba(245,116,28,0.12) 0%, transparent 55%)",
+      },
     },
   },
   plugins: [],

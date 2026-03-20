@@ -1,5 +1,4 @@
 "use client";
-import CircleImage from "@/app/components/CircleImage";
 import Container from "@/app/components/Container";
 import ContactForm from "@/app/components/Forms/ContactForm";
 import SliderService from "@/app/components/SliderService";
@@ -18,17 +17,16 @@ const ServicesPage = () => {
     <>
       <TransitionPage />
       <Container>
-        <CircleImage />
-        <div className="grid items-center justify-center max-w-5xl gap-6 mx-auto md:grid-cols-2">
-          <div className="max-w-[450px]">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center md:text-left md:mt-10 font-bold md:px-20 md:mb-8">
+        <div className="grid items-center justify-center max-w-5xl gap-8 mx-auto md:grid-cols-2">
+          <div className="max-w-[480px]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-center md:text-left md:mt-10 font-extrabold mb-6">
               {tr("services_title")}
             </h1>
-            <p className="mb-6 text-base sm:text-lg md:text-lg lg:text-xl text-gray-300 text-center md:text-left leading-relaxed">
+            <p className="mb-8 text-base sm:text-lg text-white/60 text-center md:text-left leading-relaxed">
               {tr("services_description")}
             </p>
             <button
-              className="px-5 py-3 text-base sm:text-lg rounded-lg bg-secondary hover:bg-secondary/65 mx-auto md:mx-0 block font-medium transition-all hover:scale-105"
+              className="px-6 py-3 text-sm sm:text-base rounded-xl bg-secondary hover:bg-orange-500 mx-auto md:mx-0 block font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_24px_rgba(245,116,28,0.3)]"
               onClick={handleOpenModal}
             >
               {tr("services_cta")}

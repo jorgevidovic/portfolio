@@ -5,13 +5,33 @@
 html,
 body {
   color: #fff;
-  background: #1f1934;
+  background: #06060e;
 }
 
 main {
-  background: #393a47;
-  height: 100vh;
-  height: 100dvh;
+  background: transparent;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #06060e;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 116, 28, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f5741c;
+}
+
+/* Selection */
+::selection {
+  background: rgba(245, 116, 28, 0.25);
 }
 
 @layer utilities {

@@ -12,22 +12,20 @@ const CounterService = () => {
   const { tr } = useLang();
 
   return (
-    <div className='grid justify-between max-w-3xl grid-cols-3 gap-3 mx-auto my-8 md:flex md:grid-cols-3 md:gap-6'>
-      {dataCounter.map(({ id, endCounter, suffix, lineRight, lineRightMobile }) => (
-        <div key={id} className={`${lineRight && 'ltr'}`}>
-          <div className={`
-            ${lineRight && 'px-4 border-2 border-transparent md:border-e-gray-100'}
-            ${lineRightMobile && 'border-e-gray-100'}
-          `}>
-            <p className='flex mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-secondary'>
-              <CountUp end={endCounter} start={0} duration={5} />
+    <div className="flex items-stretch justify-center gap-0 my-8 rounded-xl bg-surface border border-white/8 overflow-hidden max-w-xl mx-auto">
+      {dataCounter.map(({ id, endCounter, suffix }, index) => (
+        <React.Fragment key={id}>
+          {index > 0 && <div className="w-px bg-white/8 self-stretch" />}
+          <div className="flex-1 text-center px-4 py-6">
+            <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-secondary tabular-nums">
+              <CountUp end={endCounter} start={0} duration={4} />
               {suffix}
             </p>
-            <p className='text-xs sm:text-sm md:text-base uppercase max-w-[100px] leading-tight'>
+            <p className="mt-2 text-[11px] sm:text-xs uppercase tracking-wider text-white/45 font-medium leading-tight">
               {tr(LABEL_KEYS[id])}
             </p>
           </div>
-        </div>
+        </React.Fragment>
       ))}
     </div>
   )
