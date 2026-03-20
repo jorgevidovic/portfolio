@@ -26,7 +26,8 @@ export const t = {
     services_form_title:  "Formulario de Contacto",
 
     // Projects / Proyectos
-    projects_title: "Proyectos",
+    projects_title:        "Proyectos",
+    portfolio_modal_visit: "Visitar web",
 
     // Testimonials / Testimonios
     testimonials_title: "Testimonios",
@@ -78,7 +79,8 @@ export const t = {
     services_form_title:  "Contact Form",
 
     // Projects
-    projects_title: "Projects",
+    projects_title:        "Projects",
+    portfolio_modal_visit: "Visit website",
 
     // Testimonials
     testimonials_title: "Testimonials",
@@ -130,7 +132,8 @@ export const t = {
     services_form_title:  "Formulaire de contact",
 
     // Projects
-    projects_title: "Projets",
+    projects_title:        "Projets",
+    portfolio_modal_visit: "Visiter le site",
 
     // Testimonials
     testimonials_title: "Témoignages",

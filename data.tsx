@@ -261,50 +261,6 @@ export const dataPortfolio = [
         "Éditeur académique indépendant à Vigo. Notre travail couvre le développement web, la gestion des réseaux sociaux, les campagnes publicitaires digitales et l'administration des systèmes pour edicionesclio.com, revistaclio.es et revistaceres.com.",
     },
   },
-  {
-    id: 4,
-    image: "/add2q.png",
-    urlDemo: "#!",
-    urlGithub: "#!",
-    tags: ["Web Development"],
-    es: {
-      title: "ADD2Q",
-      description:
-        "Plataforma de gestión de contenidos y publicaciones digitales, desarrollada para optimizar flujos de trabajo editoriales y mejorar la escalabilidad y sostenibilidad de proyectos tecnológicos.",
-    },
-    en: {
-      title: "ADD2Q",
-      description:
-        "Digital content and publication management platform, developed to optimize editorial workflows and improve the scalability and sustainability of technology projects.",
-    },
-    fr: {
-      title: "ADD2Q",
-      description:
-        "Plateforme de gestion de contenus et de publications numériques, développée pour optimiser les flux de travail éditoriaux et améliorer la scalabilité et la durabilité des projets technologiques.",
-    },
-  },
-  {
-    id: 5,
-    image: "/galistore.png",
-    urlDemo: "#!",
-    urlGithub: "#!",
-    tags: ["Web Development"],
-    es: {
-      title: "Galistore",
-      description:
-        "Sistema de gestión de ventas e inventario diseñado para sistematizar y optimizar la productividad comercial, permitiendo al equipo gestionar sus ventas de forma eficiente.",
-    },
-    en: {
-      title: "Galistore",
-      description:
-        "Sales and inventory management system designed to systematize and optimize commercial productivity, enabling the team to manage their sales efficiently.",
-    },
-    fr: {
-      title: "Galistore",
-      description:
-        "Système de gestion des ventes et des stocks conçu pour systématiser et optimiser la productivité commerciale, permettant à l'équipe de gérer ses ventes de manière efficace.",
-    },
-  },
 ];
 
 export const dataTestimonials = [
