@@ -124,22 +124,135 @@ export async function POST(req: NextRequest) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
-      from: '"Mail de JorgeVidovic.com"<mailhandler@jorgevidovic.com>',
-      to: 'jorgevidovic@vidovic.systems',
-      subject: `Nuevo mensaje de contacto de jorgevidovic.com: ${safeSubject}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333;">Nuevo mensaje de contacto</h2>
-          <div style="background: #f5f5f5; padding: 20px; border-radius: 5px;">
-            <p><strong>Nombre:</strong> ${safeName}</p>
-            <p><strong>Correo:</strong> ${safeEmail}</p>
-            <p><strong>Asunto:</strong> ${safeSubject}</p>
-            <hr style="border: 1px solid #ddd;">
-            <p><strong>Mensaje:</strong></p>
-            <p>${safeMessage}</p>
-          </div>
-        </div>
-      `,
+      from: '"Jorge Vidovic · Portfolio" <mailhandler@jorgevidovic.com>',
+      to: 'jorge.i.vidovic@edicionesclio.com',
+      replyTo: safeEmail,
+      subject: `✉ Nuevo mensaje — ${safeSubject}`,
+      html: `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevo mensaje de contacto</title>
+</head>
+<body style="margin:0;padding:0;background-color:#06060e;font-family:'Segoe UI',Arial,sans-serif;">
+
+  <!-- Wrapper -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#06060e;padding:40px 16px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:580px;">
+
+          <!-- Header -->
+          <tr>
+            <td style="padding-bottom:28px;" align="center">
+              <p style="margin:0;font-size:26px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;">
+                Jorge <span style="color:#f5741c;">Vidovic</span>
+              </p>
+              <p style="margin:6px 0 0;font-size:12px;font-weight:600;color:#f5741c;letter-spacing:3px;text-transform:uppercase;">
+                Portfolio · Formulario de contacto
+              </p>
+            </td>
+          </tr>
+
+          <!-- Card -->
+          <tr>
+            <td style="background-color:#0e0e1c;border-radius:16px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;">
+
+              <!-- Orange top bar -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="height:3px;background:linear-gradient(90deg,#f5741c 0%,rgba(245,116,28,0.2) 60%,transparent 100%);"></td>
+                </tr>
+              </table>
+
+              <!-- Body -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:32px 32px 12px;">
+                    <p style="margin:0 0 24px;font-size:18px;font-weight:700;color:#ffffff;">
+                      Nuevo mensaje recibido
+                    </p>
+
+                    <!-- Field: Name -->
+                    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                      <tr>
+                        <td style="padding:14px 16px;background-color:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
+                          <p style="margin:0 0 4px;font-size:10px;font-weight:600;color:#f5741c;text-transform:uppercase;letter-spacing:1.5px;">Nombre</p>
+                          <p style="margin:0;font-size:15px;color:#e5e5e5;">${safeName}</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Field: Email -->
+                    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                      <tr>
+                        <td style="padding:14px 16px;background-color:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
+                          <p style="margin:0 0 4px;font-size:10px;font-weight:600;color:#f5741c;text-transform:uppercase;letter-spacing:1.5px;">Correo electrónico</p>
+                          <p style="margin:0;font-size:15px;color:#e5e5e5;">
+                            <a href="mailto:${safeEmail}" style="color:#f5741c;text-decoration:none;">${safeEmail}</a>
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Field: Subject -->
+                    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                      <tr>
+                        <td style="padding:14px 16px;background-color:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
+                          <p style="margin:0 0 4px;font-size:10px;font-weight:600;color:#f5741c;text-transform:uppercase;letter-spacing:1.5px;">Asunto</p>
+                          <p style="margin:0;font-size:15px;color:#e5e5e5;">${safeSubject}</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Field: Message -->
+                    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+                      <tr>
+                        <td style="padding:14px 16px;background-color:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(245,116,28,0.2);">
+                          <p style="margin:0 0 8px;font-size:10px;font-weight:600;color:#f5741c;text-transform:uppercase;letter-spacing:1.5px;">Mensaje</p>
+                          <p style="margin:0;font-size:15px;color:#cccccc;line-height:1.7;">${safeMessage}</p>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Reply button -->
+                    <table cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="border-radius:10px;background-color:#f5741c;">
+                          <a href="mailto:${safeEmail}?subject=Re: ${safeSubject}"
+                             style="display:inline-block;padding:12px 28px;font-size:14px;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:0.3px;">
+                            Responder a ${safeName}
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Bottom bar -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:20px 32px;border-top:1px solid rgba(255,255,255,0.06);">
+                    <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.3);text-align:center;">
+                      Enviado desde <a href="https://jorgevidovic.com" style="color:#f5741c;text-decoration:none;">jorgevidovic.com</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>`,
     });
 
     return NextResponse.json({ message: 'Correo enviado con éxito.', success: true });
