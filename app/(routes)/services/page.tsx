@@ -33,7 +33,7 @@ const ServicesPage = () => {
             </button>
 
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-              <h2 className="text-2xl font-bold mb-4 text-black">
+              <h2 className="text-2xl font-bold mb-6 text-white">
                 {tr("services_form_title")}
               </h2>
               <ContactForm />

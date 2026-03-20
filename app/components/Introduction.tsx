@@ -79,7 +79,7 @@ const Introduction = () => {
             </button>
 
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black">
+              <h2 className="text-xl sm:text-2xl font-bold mb-6 text-white">
                 {tr("intro_form_title")}
               </h2>
               <ContactForm />

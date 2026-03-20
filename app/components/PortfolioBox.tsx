@@ -47,13 +47,13 @@ const PortfolioBox = ({ data }: PortfolioBoxProps) => {
         {/* Top accent */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-secondary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        <div className="mb-4 flex items-center justify-center rounded-lg bg-white/5 p-4 aspect-video overflow-hidden">
+        <div className="mb-4 flex items-center justify-center rounded-lg bg-white/5 h-[120px] overflow-hidden">
           <Image
             src={data.image}
             alt={content.title}
-            width={180}
-            height={120}
-            className="w-full h-full object-contain"
+            width={160}
+            height={100}
+            className="max-h-[90px] w-auto object-contain"
           />
         </div>
 

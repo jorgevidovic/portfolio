@@ -129,7 +129,7 @@ export const dataAboutPage = [
 ];
 
 export const dataCounter = [
-  { id: 0, endCounter: 50,  suffix: "+", lineRight: true,  lineRightMobile: true  },
+  { id: 0, endCounter: 5,   suffix: "+", lineRight: true,  lineRightMobile: true  },
   { id: 1, endCounter: 100, suffix: "%", lineRight: true,  lineRightMobile: true  },
   { id: 2, endCounter: 5,   suffix: "+", lineRight: false, lineRightMobile: false },
 ];
@@ -241,7 +241,7 @@ export const dataPortfolio = [
   },
   {
     id: 3,
-    image: "/edicionesclio.png",
+    image: "/edicionesclio-logo.jpg",
     urlDemo: "https://edicionesclio.com",
     urlGithub: "#!",
     tags: ["Web Development", "Social Media", "Paid Ads", "Sysadmin"],
